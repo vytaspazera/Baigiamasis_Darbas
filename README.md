@@ -2,5 +2,6 @@
 
 Programą paleidus per main.py atsiras langas su Lietuvos žemėlapiu ir Lietuvos miestais. Pasirinkus miestus iš sąrašo jie bus pridėti prie Jūsų kelionės maršruto. Kelionė pasibaigs pasirinkus pradinį miestą arba paspaudus "Užbaigti kelionę" Jūs busite gražinti į pradinį miestą ir bus išmetama kelionės užbaigimo žinutė su visu nukeliautų kilometrų skaičiumi. Programoje bandydami keliaujant į jau aplankytus miestus gausite pranešimus, kad jau tuos miestus aplankėte. Netyčia pasirinkus ne tuos miestus galite spausti pradėti kelionę iš naujo.
 
-- miestai.py scrapina Lietuvos miestų sąrašą ir priskiria miestams koordinates ir visą gautą informaciją priskiria pickle failui miestai_ir_koordinates.pkl.
-- map_function.py atlieka žemėlapių veiksmus, jame naudojame chromedriver.exe
+- miestai.py scrapina Lietuvos miestų sąrašą ir priskiria miestams koordinates. Visą gautą informaciją priskiria pickle failui miestai_ir_koordinates.pk tam, kad leidžiant pagrindinę programą nereikėtų kiekvieną kartą scrapinti miestų ir jų koordinačių.
+- map_functions.py atlieka žemėlapių veiksmus, jame naudojame chromedriver.exe. Pagrindinėje programoje main.py leidžiant funkciją sukurti_zemelapi iš map_functions.py, ji darbo vietoje išsaugo nuotrauką su Lietuvos žemėlapiu. Jei į funkciją nededam jokių koordinačių ji gražina tuščią Lietuvos žemėlapį, jei į jį paduodamos koordinatės, jis jas iš eilės atvaizduoja žemėlapyje.
+- main.py sukuria tkinker vaizdą. Paleidus programą loadina iš sukurti_zemelapi funkcijos sukurtą tuščią žemėlapį. Programoje pasirinkus miestus, jų koordinatės prisideda į sąrašus kurie perleidžiami į funkciją sukurti_zemelapi ir vėl yra loadinami.
